@@ -48,6 +48,9 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useSupabaseClient } from '#imports'
+
+const supabase = useSupabaseClient()
 
 const email = ref('')
 const error = ref('')
@@ -61,30 +64,34 @@ const validateEmail = (email) => {
 
 const handleSubmit = async () => {
   error.value = ''
-  
+
   if (!email.value) {
     error.value = 'Email is required'
     return
   }
-  
+
   if (!validateEmail(email.value)) {
     error.value = 'Please enter a valid email address'
     return
   }
-  
+
   isSubmitting.value = true
-  
+
   try {
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    
-    success.value = true
-    email.value = ''
-    
-    // Reset success message after 5 seconds
-    setTimeout(() => {
-      success.value = false
-    }, 5000)
+    const { error: insertError } = await supabase
+      .from('Emails') // Make sure table is named exactly 'Emails'
+      .insert([{ Email: email.value }]) // Make sure column is 'Email'
+
+    if (insertError) {
+      console.error(insertError)
+      error.value = insertError.message || 'Insert failed'
+    } else {
+      success.value = true
+      email.value = ''
+      setTimeout(() => {
+        success.value = false
+      }, 5000)
+    }
   } catch (err) {
     error.value = 'Something went wrong. Please try again.'
   } finally {
