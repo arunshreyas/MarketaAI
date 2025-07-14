@@ -119,6 +119,185 @@
       </div>
     </section>
 
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16 fade-in-up">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">
+            Simple, Transparent Pricing
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Choose the plan that fits your marketing needs. Start free and scale as you grow.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <!-- Starter Plan -->
+          <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 fade-in-up stagger-1">
+            <div class="text-center">
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">Starter</h3>
+              <div class="mb-6">
+                <span class="text-4xl font-bold text-gray-900">$29</span>
+                <span class="text-gray-600">/month</span>
+              </div>
+              <p class="text-gray-600 mb-8">Perfect for small businesses and startups</p>
+            </div>
+            
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">10 campaigns per month</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Basic AI templates</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Email support</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Basic analytics</span>
+              </li>
+            </ul>
+            
+            <button class="w-full btn-secondary">
+              Get Started
+            </button>
+          </div>
+
+          <!-- Professional Plan (Featured) -->
+          <div class="bg-blue-600 rounded-2xl shadow-xl border-2 border-blue-600 p-8 relative fade-in-up stagger-2">
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+              <span class="bg-yellow-400 text-gray-900 px-4 py-1 rounded-full text-sm font-semibold">Most Popular</span>
+            </div>
+            
+            <div class="text-center">
+              <h3 class="text-2xl font-bold text-white mb-2">Professional</h3>
+              <div class="mb-6">
+                <span class="text-4xl font-bold text-white">$79</span>
+                <span class="text-blue-200">/month</span>
+              </div>
+              <p class="text-blue-200 mb-8">Ideal for growing marketing teams</p>
+            </div>
+            
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-white">50 campaigns per month</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-white">Advanced AI templates</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-white">Priority support</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-white">Advanced analytics</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-white">Team collaboration</span>
+              </li>
+            </ul>
+            
+            <button class="w-full bg-white text-blue-600 hover:bg-gray-50 font-semibold py-3 px-4 rounded-lg transition-colors duration-200">
+              Get Started
+            </button>
+          </div>
+
+          <!-- Enterprise Plan -->
+          <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 fade-in-up stagger-3">
+            <div class="text-center">
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">Enterprise</h3>
+              <div class="mb-6">
+                <span class="text-4xl font-bold text-gray-900">$199</span>
+                <span class="text-gray-600">/month</span>
+              </div>
+              <p class="text-gray-600 mb-8">For large organizations and agencies</p>
+            </div>
+            
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Unlimited campaigns</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Custom AI training</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">24/7 phone support</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Custom integrations</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Dedicated account manager</span>
+              </li>
+            </ul>
+            
+            <button class="w-full btn-secondary">
+              Contact Sales
+            </button>
+          </div>
+        </div>
+
+        <!-- Try Demo Section -->
+        <div class="text-center mt-16 fade-in-up">
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 max-w-2xl mx-auto">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Ready to See Marketa AI in Action?
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Experience the power of AI-generated marketing campaigns with our interactive demo
+            </p>
+            <NuxtLink to="/chat" class="btn-primary inline-flex items-center">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+              Try Demo
+            </NuxtLink>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div class="max-w-4xl mx-auto text-center fade-in-up">
@@ -133,16 +312,15 @@
           <button class="btn-primary">
             Join the Waitlist
           </button>
-          <button class="btn-secondary">
-            Learn More
-          </button>
+          <NuxtLink to="/chat" class="btn-secondary">
+            Try Demo
+          </NuxtLink>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8">
-     <contactForm/>
+    <footer class="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8">
       <div class="max-w-6xl mx-auto">
         <div class="grid md:grid-cols-4 gap-8 mb-12">
           <div class="md:col-span-2">
@@ -180,7 +358,7 @@
             <h4 class="font-semibold mb-4">Product</h4>
             <ul class="space-y-2 text-gray-400">
               <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">Pricing</a></li>
+              <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
               <li><a href="#" class="hover:text-white transition-colors">API</a></li>
             </ul>
           </div>
@@ -190,7 +368,7 @@
             <ul class="space-y-2 text-gray-400">
               <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
               <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
-              <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Support</a></li>
             </ul>
           </div>
         </div>
@@ -206,7 +384,6 @@
         </div>
       </div>
     </footer>
-   
   </div>
 </template>
 
