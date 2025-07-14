@@ -10,7 +10,7 @@
         <div class="hidden md:flex space-x-8">
           <a href="#features" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Features</a>
           <a href="#about" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">About</a>
-          <a href="#contact" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Contact</a>
+          <a href="#pricing" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Pricing</a>
         </div>
         <div class="hidden md:flex items-center space-x-4">
           <NuxtLink to="/login" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">
@@ -34,7 +34,7 @@
         <div class="px-2 pt-2 pb-3 space-y-1">
           <a href="#features" @click="mobileMenuOpen = false" class="block px-3 py-2 text-gray-600 hover:text-gray-900 font-medium transition-colors">Features</a>
           <a href="#about" @click="mobileMenuOpen = false" class="block px-3 py-2 text-gray-600 hover:text-gray-900 font-medium transition-colors">About</a>
-          <a href="#contact" @click="mobileMenuOpen = false" class="block px-3 py-2 text-gray-600 hover:text-gray-900 font-medium transition-colors">Contact</a>
+          <a href="#pricing" @click="mobileMenuOpen = false" class="block px-3 py-2 text-gray-600 hover:text-gray-900 font-medium transition-colors">Pricing</a>
           
           <div class="border-t border-gray-200 pt-4">
             <NuxtLink to="/login" @click="mobileMenuOpen = false" class="block px-3 py-2 text-gray-600 hover:text-gray-900 font-medium transition-colors">
