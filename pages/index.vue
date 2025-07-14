@@ -1,4 +1,5 @@
 <template>
+  <navBar/>
   <div class="min-h-screen bg-white">
     <!-- Hero Section -->
     <section class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
@@ -141,6 +142,7 @@
 
     <!-- Footer -->
     <footer id="contact" class="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8">
+     <contactForm/>
       <div class="max-w-6xl mx-auto">
         <div class="grid md:grid-cols-4 gap-8 mb-12">
           <div class="md:col-span-2">
@@ -204,6 +206,7 @@
         </div>
       </div>
     </footer>
+   
   </div>
 </template>
 
