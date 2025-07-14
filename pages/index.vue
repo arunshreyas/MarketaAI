@@ -1,5 +1,5 @@
 <template>
-  <navBar/>
+<navBar/>
   <div class="min-h-screen bg-white">
     <!-- Hero Section -->
     <section class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">

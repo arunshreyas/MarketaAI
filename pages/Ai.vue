@@ -88,60 +88,74 @@ const sendMessage = async () => {
   isTyping.value = true
 
   try {
-  const { error: insertErr } = await supabase
-    .from('Prompts') // 👈 Match your actual table name
-    .insert([{ Prompt: input }]) // 👈 Match your actual column name exactly
-  if (insertErr) throw insertErr
+    // ✅ Get authenticated user
+    const {
+      data: { user },
+      error: authError
+    } = await supabase.auth.getUser()
 
-  const maxTries = 20
-  const delay = 2000
-  let tries = 0
+    if (authError || !user) throw new Error('User not signed in')
 
-  while (tries < maxTries) {
-    const { data: promptRow, error: fetchError } = await supabase
-      .from('Prompts')
-      .select('id, Response')
-      .order('created_at', { ascending: false })
-      .limit(1)
-      .maybeSingle()
+    const user_id = user.id
 
-    if (fetchError) throw fetchError
+    // ✅ Insert prompt with user_id
+    const { data: insertedPrompt, error: insertError } = await supabase
+      .from('Conversations')
+      .insert([{ Prompt: input, user_id }])
+      .select('*') // Get inserted row (optional)
 
-    if (promptRow?.Response) {
-      messages.value.push({
-        id: Date.now() + 1,
-        text: promptRow.Response,
-        isUser: false,
-        timestamp: new Date()
-      })
-      isTyping.value = false
-      scrollToBottom()
-      return
+    if (insertError) throw insertError
+
+    // ✅ Poll for AI response from Conversations table
+    const maxTries = 20
+    const delay = 2000
+    let tries = 0
+
+    while (tries < maxTries) {
+      const { data: promptRow, error: fetchError } = await supabase
+        .from('Conversations')
+        .select('id, Response')
+        .eq('user_id', user_id)
+        .order('created_at', { ascending: false })
+        .limit(1)
+        .maybeSingle()
+
+      if (fetchError) throw fetchError
+
+      if (promptRow?.Response) {
+        messages.value.push({
+          id: Date.now() + 1,
+          text: promptRow.Response,
+          isUser: false,
+          timestamp: new Date()
+        })
+        isTyping.value = false
+        scrollToBottom()
+        return
+      }
+
+      await new Promise(resolve => setTimeout(resolve, delay))
+      tries++
     }
 
-    await new Promise(resolve => setTimeout(resolve, delay))
-    tries++
+    messages.value.push({
+      id: Date.now() + 2,
+      text: '⏳ AI is still thinking... Try again later.',
+      isUser: false,
+      timestamp: new Date()
+    })
+  } catch (err) {
+    console.error('❌ Error sending message:', err)
+    messages.value.push({
+      id: Date.now() + 3,
+      text: '❌ Error sending message. ' + err.message,
+      isUser: false,
+      timestamp: new Date()
+    })
+  } finally {
+    isTyping.value = false
+    scrollToBottom()
   }
-
-  messages.value.push({
-    id: Date.now() + 2,
-    text: '⏳ AI is still thinking... Try again later.',
-    isUser: false,
-    timestamp: new Date()
-  })
-} catch (err) {
-  console.error("❌ Error sending message:", err)
-  messages.value.push({
-    id: Date.now() + 3,
-    text: '❌ Error sending message.',
-    isUser: false,
-    timestamp: new Date()
-  })
-} finally {
-  isTyping.value = false
-  scrollToBottom()
-}
-
 }
 
 </script>
