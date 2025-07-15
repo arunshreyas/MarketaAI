@@ -7,12 +7,14 @@
       </div>
 
       <form @submit.prevent="handleSignup" class="space-y-6">
+        <!-- Email -->
         <div>
           <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-          <input v-model="form.email" type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Enter your email" />
+          <input v-model="form.email" type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" placeholder="Enter your email" />
           <p v-if="errors.email" class="text-red-500 text-sm mt-1">{{ errors.email }}</p>
         </div>
 
+        <!-- Password -->
         <div>
           <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
           <div class="relative">
@@ -26,12 +28,14 @@
           <p v-if="errors.password" class="text-red-500 text-sm mt-1">{{ errors.password }}</p>
         </div>
 
+        <!-- Confirm Password -->
         <div>
           <label class="block text-sm font-medium text-gray-700 mb-2">Confirm Password</label>
           <input :type="showPassword ? 'text' : 'password'" v-model="form.confirmPassword" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" placeholder="Confirm your password" />
           <p v-if="errors.confirmPassword" class="text-red-500 text-sm mt-1">{{ errors.confirmPassword }}</p>
         </div>
 
+        <!-- Terms -->
         <div class="flex items-start">
           <input id="terms" type="checkbox" v-model="form.agreeTerms" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" />
           <label for="terms" class="ml-2 block text-sm text-gray-900">
@@ -40,10 +44,12 @@
         </div>
         <p v-if="errors.agreeTerms" class="text-red-500 text-sm mt-1">{{ errors.agreeTerms }}</p>
 
+        <!-- General error -->
         <div v-if="errors.general" class="bg-red-50 border border-red-200 rounded-lg p-4 text-sm text-red-600">
           {{ errors.general }}
         </div>
 
+        <!-- Submit Button -->
         <button type="submit" :disabled="isLoading" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg flex items-center justify-center">
           <span v-if="isLoading" class="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></span>
           {{ isLoading ? 'Creating Account...' : 'Create Account' }}
@@ -161,35 +167,28 @@ const handleSignup = async () => {
   try {
     const { data, error } = await supabase.auth.signUp({
       email: form.email,
-      password: form.password,
-      options: {
-        emailRedirectTo: `${window.location.origin}/login`
-      }
+      password: form.password
     })
 
-    console.log('Signup data:', data)
     if (error) {
-      console.error('Signup error:', error.message)
       errors.general = error.message
+    } else if (data.session) {
+      // Logged in immediately
+      await router.push('/Ai')
     } else {
-      alert('Confirmation email sent! Please check your inbox.')
+      // Just signed up but no session, fallback (should not happen with email confirmation off)
       await router.push('/login')
     }
   } catch (e) {
-    console.error('Unexpected error:', e)
     errors.general = 'Something went wrong. Please try again.'
   } finally {
     isLoading.value = false
   }
 }
-
 useHead({
   title: 'Sign Up - Marketa AI',
   meta: [
-    {
-      name: 'description',
-      content: 'Create your Marketa AI account and start building AI-powered marketing campaigns today.'
-    }
+    { name: 'description', content: 'Create your Marketa AI account and start building AI-powered marketing campaigns today.' }
   ]
 })
 </script>
